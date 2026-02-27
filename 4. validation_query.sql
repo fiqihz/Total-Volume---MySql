@@ -1,0 +1,18 @@
+SELECT 
+    s.SymbolName AS Symbol,
+    CASE 
+        WHEN SUM(CASE WHEN o.Direction = 'BUY' 
+        			  THEN o.Volume
+                      ELSE -o.Volume
+                      END) < 0 
+        THEN 'SELL'
+        ELSE 'BUY'
+    	END AS Direction,
+     ABS(SUM(CASE WHEN o.Direction = 'BUY' 
+                  THEN o.Volume
+                  ELSE -o.Volume
+            	  END)) AS TotalVolume
+FROM `Orders` o
+JOIN `Symbol` s ON o.SymbolId = s.SymbolId
+WHERE s.SymbolName = 'EURUSD'
+GROUP BY s.SymbolName;

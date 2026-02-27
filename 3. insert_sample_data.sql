@@ -1,0 +1,21 @@
+INSERT INTO Symbol VALUES
+(1,'EURUSD','EUR/USD'),
+(2,'GBPUSD','GBP/USD'),
+(3,'OIL','OILCash'),
+(4,'XAUUSD','XAU/USD');
+
+INSERT INTO Lp VALUES
+(1,'BCA'),
+(2,'BNI'),
+(3,'Mandiri'),
+(4,'Jago');
+
+INSERT INTO Orders VALUES
+(1,1,1,'SELL',500000),
+(2,2,1,'SELL',500000),
+(3,3,1,'BUY',500000),
+(4,2,2,'BUY',500000),
+(5,1,2,'BUY',250000),
+(6,3,2,'SELL',500000),
+(7,1,3,'BUY',250000),
+(8,3,3,'BUY',500000);
